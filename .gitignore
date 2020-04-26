@@ -1,0 +1,6 @@
+manage.py
+/.vscode/
+/.venv/
+migrations/
+__pycache__/
+cert*
