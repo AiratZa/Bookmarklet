@@ -4,3 +4,5 @@ manage.py
 migrations/
 __pycache__/
 cert*
+bookmarks/media/*/*
+!bookmarks/media/users/no-avatar.png

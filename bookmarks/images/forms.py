@@ -5,6 +5,9 @@ from urllib import request
 from django.core.files.base import ContentFile
 from django.utils.text import slugify
 
+import time
+import random
+
 class ImageCreateForm(forms.ModelForm):
     class Meta:
         model = Image
@@ -25,7 +28,7 @@ class ImageCreateForm(forms.ModelForm):
                 commit=True):
         image = super().save(commit=False)
         image_url = self.cleaned_data['url']
-        name = slugify(image.title)
+        name = time.time() + random.randint(0, 99999)
         extension = image_url.rsplit('.', 1)[1].lower()
         image_name = f'{name}.{extension}'
         # download image from the given URL
